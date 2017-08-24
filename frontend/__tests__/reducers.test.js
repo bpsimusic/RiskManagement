@@ -10,7 +10,7 @@ describe('Reducers', ()=>{
     });
 
     it('should initialize with a specific object', ()=>{
-      expect(AllocationReducer(undefined, {})).toEqual({values: [], risk_level: "N/A"});
+      expect(AllocationReducer(undefined, {})).toEqual({values: [20,20,20,20,20], risk_level: 1});
     });
 
     it('should return the previous state if no actions match', ()=>{

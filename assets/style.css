@@ -1,0 +1,25 @@
+html, body, section, article,
+h1, h2, h6, p, strong, em{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+/*table {
+
+  display: table;
+border-collapse: separate;
+border-spacing: 1px;
+border-color: red;
+}*/
+
+tr > td > input {
+  width: 50px;
+}
