@@ -3,11 +3,15 @@ import React from 'react';
 class Row extends React.Component {
   constructor(props){
     super(props);
-    this.state = {stock: 0, bond: 0, cash: 0, international: 0, equity: 0, selected: false};
+    this.state = {stock: 0, bond: 0, cash: 0, international: 0, equity: 0, error: true};
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleClick = this.handleClick.bind(this);
 
   }
+
+  // componentWillMount(){
+  //   this.props.updateRiskLevel(this.props.id);
+  // }
 
   calculateTotal(){
 
@@ -19,9 +23,22 @@ class Row extends React.Component {
     const sum = values.reduce((a,b)=>Number(a)+Number(b));
 
     if (sum === 100){
+      this.props.updateAllocation({values});
+      this.setState({error: false});
+    } else {
+      this.setState({error: true});
+    }
+  }
 
-      this.props.updateAllocation({values, risk_level: this.props.id});
-
+  error(){
+    if (this.state.error && this.props.active){
+      return (<td className={"errorMessage"}>
+        Total must be 100
+      </td>);
+    } else {
+      return (
+        <td></td>
+      );
     }
   }
 
@@ -50,6 +67,7 @@ class Row extends React.Component {
           <td><input onChange={this.handleUpdate("cash")} value={this.state.cash} /></td>
           <td><input onChange={this.handleUpdate("international")} value={this.state.international} /></td>
           <td><input onChange={this.handleUpdate("equity")} value={this.state.equity} /></td>
+          {this.error()}
         </tr>
 
     );

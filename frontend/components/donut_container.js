@@ -1,9 +1,12 @@
 import {connect} from 'react-redux';
 import Donut from './donut';
 
-const mapStateToProps = ({allocation}) => ({
-  allocation
-});
+const mapStateToProps = ({allocation}) => {
+  const {values} = allocation;
+  return {
+    values
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
 

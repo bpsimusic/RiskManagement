@@ -1,6 +1,6 @@
 import {merge} from 'lodash';
 import {UPDATE_ALLOCATION, RISK_LEVEL} from '../actions/allocation_actions';
-const _default = {values: [20,20,20,20,20], risk_level: 1};
+const _default = {values: [20,20,20,20,20], risk_level: ""};
 
 
 const AllocationReducer = (state = _default, action)=>{

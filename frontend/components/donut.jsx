@@ -8,13 +8,15 @@ class Donut extends React.Component {
   }
 
   render(){
-    const {values} = this.props.allocation;
+    const {values} = this.props;
     const types = values.map(el=>Number(el));
+
     return (
       <div>
     <DonutChart
         data={[{
-            label: 'Stock',
+
+            label: `Stock`,
             value: types[0]
         },
         {
