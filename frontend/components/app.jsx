@@ -1,6 +1,8 @@
 import React from 'react';
 import Table from './table';
 import DonutContainer from './donut_container';
+import DollarFormContainer from './dollar_form_container';
+import RecoContainer from './reco_container';
 
 const App = ()=>(
   <div>
@@ -15,9 +17,12 @@ const App = ()=>(
       </div>
       <DonutContainer/>
     </div>
+    <div className={"dollarForm"}>
+      <DollarFormContainer/>
+      <RecoContainer/>
+    </div>
   </div>
 );
-
 
 
 
