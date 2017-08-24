@@ -66,6 +66,14 @@ label {
 
 }
 
+.selected {
+  background-color: grey;
+}
+
+.notSelected {
+  background-color: white;
+}
+
 .tableContainer {
     display: flex;
     align-items: center;
