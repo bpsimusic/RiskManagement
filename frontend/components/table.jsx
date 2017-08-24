@@ -1,10 +1,10 @@
 import React from 'react';
-import Row from './row';
+import RowContainer from './row_container';
 
 function createRows(){
     const table = [];
     for (let i = 0; i < 10; i++) {
-      table.push(<Row key={i}/>);
+      table.push(<RowContainer key={i}/>);
     }
     return table;
 }

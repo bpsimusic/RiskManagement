@@ -1,12 +1,12 @@
 import React from 'react';
 import Table from './table';
-import Donut from './donut';
+import DonutContainer from './donut_container';
 
 const App = ()=>(
   <div>
     <div>
       <Table />
-      <Donut />
+      <DonutContainer/>
     </div>
   </div>
 );
