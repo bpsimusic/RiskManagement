@@ -1,8 +1,6 @@
 import React from 'react';
 
-
-
-const Test = ()=>{
+const Congrats = ()=>{
   return (
     <div>
       "hello"
@@ -11,4 +9,4 @@ const Test = ()=>{
 };
 
 
-export default Test;
+export default Congrats;

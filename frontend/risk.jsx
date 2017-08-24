@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Test from "./test";
+import Congrats from "./congrats";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const root = document.getElementById("root");
-	ReactDOM.render(<Test/>, root);
+	ReactDOM.render(<Congrats/>, root);
 });
