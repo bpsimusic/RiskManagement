@@ -1,7 +1,8 @@
 export const UPDATE_ALLOCATION = 'UPDATE_ALLOCATION';
 
 
-export const updateAllocation = (values) => ({
+export const updateAllocation = ({values, risk_level}) => ({
   type: UPDATE_ALLOCATION,
-  values
+  values,
+  risk_level
 });

@@ -5,7 +5,7 @@ import {updateAllocation} from '../actions/allocation_actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateAllocation: (values)=>dispatch(updateAllocation(values))
+    updateAllocation: (data)=>dispatch(updateAllocation(data))
   };
 };
 

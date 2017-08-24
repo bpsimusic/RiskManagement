@@ -8,7 +8,7 @@ const AllocationReducer = (state = _default, action)=>{
 
   switch(action.type){
     case UPDATE_ALLOCATION:
-      const newState = merge({}, state, {values: action.values});
+      const newState = merge({}, state, {values: action.values, risk_level: action.risk_level});
       return newState;
     default:
       return state;
