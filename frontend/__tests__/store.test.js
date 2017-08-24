@@ -1,5 +1,5 @@
 
-import configureStore from '../store';
+import configureStore from '../store/store';
 jest.mock('redux');
 describe('Store', ()=>{
     let createStore;

@@ -1,8 +1,5 @@
 import React from 'react';
-import Row from './components/row';
-
-
-
+import Row from './row';
 
 function createRows(){
     const table = [];
@@ -11,7 +8,6 @@ function createRows(){
     }
     return table;
 }
-
 
 const Table = ()=>{
     return (
