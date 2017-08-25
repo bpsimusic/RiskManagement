@@ -1,5 +1,7 @@
 # Risk Management exercise
 
+To demo the project, open index.html in the browser. 
+
 Part A - Create a Risk Profile by building an interface that illustrates a donut chart
 for every Risk Level. This chart will have five columns for the individual's finances in percentages.
 
@@ -45,7 +47,7 @@ switch(type){
 
 I used npm's package 'react-donut-chart' to react to changes in the allocation slice of state.
 
-For the table, I decided to go for ease-of-use; instead of pressing the "submit" button every time after completing a row, the user can click anywhere on a row to see the corresponding donut chart. If a row is incomplete (does not add up to 100), the donut chart does not reflect the row's information. 
+For the table, I decided to go for ease-of-use; instead of pressing the "submit" button every time after completing a row, the user can click anywhere on a row to see the corresponding donut chart. If a row is incomplete (does not add up to 100), the donut chart does not reflect the row's information.
 
 ## Future Project Plans
 
