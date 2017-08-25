@@ -17,7 +17,7 @@ const App = ()=>(
       </div>
       <DonutContainer/>
     </div>
-    <div className={"dollarForm"}>
+    <div className={"dollarSection"}>
       <DollarFormContainer/>
       <RecoContainer/>
     </div>

@@ -8,6 +8,7 @@ class DollarForm extends React.Component {
     super(props);
     this.state = {stock: 0, bond: 0, cash: 0, international: 0, equity: 0};
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
@@ -20,7 +21,7 @@ class DollarForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.updateDollars({stock: this.state.stock,
+    this.props.updateDollar({stock: this.state.stock,
       bond: this.state.bond,
       cash: this.state.cash,
       international: this.state.international,
@@ -29,11 +30,11 @@ class DollarForm extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="dollarForm">
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="stock">Stock</label>
-            <input id="stock" onChange={this.handleUpdate("bond")} value={this.state.stock} />
+            <input id="stock" onChange={this.handleUpdate("stock")} value={this.state.stock} />
           </div>
           <div>
             <label htmlFor="bond">Bond</label>
