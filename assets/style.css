@@ -1,23 +1,49 @@
-html, body, section, article,
-h1, h2, h6, p, strong, em{
-  margin: 0;
-  border: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: inherit;
-  font: inherit;
-  text-decoration: inherit;
-  text-align: inherit;
-  color: inherit;
-  background: transparent;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-family: sans-serif;
+
+}
+
+ul {
+  padding-left: 30px;
+    padding-top: 15px;
+}
+
+.instructions {
+  font-family: sans-serif;
+  width: 50%;
+  position: relative;
+  left: 150px;
+  top: 30px;
 }
 
 
-
-
-
 tr > td > input {
-  width: 50px;
+  width: 60px;
+height: 20px;
+padding-left: 10px
 }
 
 form > div > input {
@@ -120,13 +146,17 @@ margin-bottom: 25px;
   margin-bottom: 5px;
 }
 
+th {
+  padding-bottom: 8px;
+}
+
 div h1 {
   margin-top: 50px;
 }
 
 .donutchart {
-  width: 500px;
-  height: 366px;
+  width: 700px;
+  height: 500px;
 }
 
 text[class*='donutchart-innertext']{
@@ -139,6 +169,8 @@ text[class*='donutchart-innertext']{
   background: white;
   font-family: sans-serif;
   font-size: 12px;
+  width: 110px;
+  padding-left: 5px;
 }
 
 .finances{
@@ -152,8 +184,17 @@ text[class*='donutchart-innertext']{
 
 }
 
+.riskLevel {
+  text-align: right;
+  padding-right: 8px;
+}
+
+.tableContainer h2 {
+  width:120px;
+}
+
 .selected {
-  background-color: grey;
+  background-color: #d9d9d9;
 }
 
 .notSelected {
@@ -166,10 +207,7 @@ text[class*='donutchart-innertext']{
   align-items: center;
 }
 
-.tableContainer table {
-  position: relative;
-  right: 45px;
-}
+
 
 .tableSection {
   width: 45%;
@@ -189,5 +227,5 @@ h2{
   font-family: sans-serif;
   font-size: 20px;
   line-height: normal;
-  text-align: center;
+  padding-right: 8px;
 }

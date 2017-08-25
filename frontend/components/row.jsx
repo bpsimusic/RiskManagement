@@ -37,7 +37,7 @@ class Row extends React.Component {
       </td>);
     } else {
       return (
-        <td></td>
+        <td className={"errorMessage"}></td>
       );
     }
   }
@@ -61,7 +61,7 @@ class Row extends React.Component {
   render(){
     return (
         <tr onClick={this.handleClick} className={this.toggle()}>
-          <td>{this.props.id}</td>
+          <td className={"riskLevel"}>{this.props.id}</td>
           <td><input onChange={this.handleUpdate("stock")} value={this.state.stock} /></td>
           <td><input onChange={this.handleUpdate("bond")} value={this.state.bond} /></td>
           <td><input onChange={this.handleUpdate("cash")} value={this.state.cash} /></td>

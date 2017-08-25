@@ -11,9 +11,13 @@ const App = ()=>(
       <div className={"tableSection"}>
         <h2 className={"finances"}>Finances</h2>
         <div className={"tableContainer"}>
-          <h2 className={"riskLevel"}>Risk Level</h2>
+          <h2>Risk Level</h2>
           <Table />
         </div>
+        <p className={"instructions"}>
+          To see what your risk profile looks like, complete a row that totals 100.
+          Each number represents a percentage.
+        </p>
       </div>
       <DonutContainer/>
     </div>

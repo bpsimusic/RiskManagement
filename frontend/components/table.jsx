@@ -32,6 +32,7 @@ const Table = ()=>{
           }
         </tbody>
       </table>
+      
     );
 };
 
