@@ -6,7 +6,7 @@ import RecoContainer from './reco_container';
 
 const App = ()=>(
   <div>
-    <h1>Risk Management</h1>
+    <h1 className={"riskManagementHeader"}>Risk Management</h1>
     <div className={"riskProfile"}>
       <div className={"tableSection"}>
         <h2 className={"finances"}>Finances</h2>
@@ -17,9 +17,13 @@ const App = ()=>(
       </div>
       <DonutContainer/>
     </div>
-    <div className={"dollarSection"}>
-      <DollarFormContainer/>
-      <RecoContainer/>
+    <div className="divider"></div>
+    <div className={"riskProfileTwo"}>
+      <h1>Money Advice</h1>
+      <div className={"dollarSection"}>
+        <DollarFormContainer/>
+        <RecoContainer/>
+      </div>
     </div>
   </div>
 );

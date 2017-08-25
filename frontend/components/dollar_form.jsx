@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-
-
 class DollarForm extends React.Component {
   constructor(props){
     super(props);
@@ -31,7 +28,8 @@ class DollarForm extends React.Component {
   render(){
     return (
       <div className="dollarForm">
-        <form onSubmit={this.handleSubmit}>
+        <p>Enter in dollar values</p>
+        <form autoComplete={"off"} onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="stock">Stock</label>
             <input id="stock" onChange={this.handleUpdate("stock")} value={this.state.stock} />
