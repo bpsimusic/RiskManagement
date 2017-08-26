@@ -35,7 +35,7 @@ ul {
   font-family: sans-serif;
   width: 50%;
   position: relative;
-  left: 150px;
+  left: 230px;
   top: 30px;
 }
 
@@ -176,6 +176,8 @@ text[class*='donutchart-innertext']{
 .finances{
   text-align: center;
   margin-bottom: 20px;
+  position: relative;
+left: 80px;
 }
 
 .riskProfile {
@@ -191,6 +193,8 @@ text[class*='donutchart-innertext']{
 
 .tableContainer h2 {
   width:120px;
+  position: relative;
+  left: 50px;
 }
 
 .selected {

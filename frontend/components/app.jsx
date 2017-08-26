@@ -15,8 +15,8 @@ const App = ()=>(
           <Table />
         </div>
         <p className={"instructions"}>
-          To see what your risk profile looks like, complete a row that totals 100.
-          Each number represents a percentage.
+          To see what your risk profile looks like, click on a row. Each number
+          represents a percentage.
         </p>
       </div>
       <DonutContainer/>

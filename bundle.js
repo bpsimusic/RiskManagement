@@ -7337,8 +7337,7 @@ Object.defineProperty(exports, "__esModule", {
 var UPDATE_ALLOCATION = exports.UPDATE_ALLOCATION = 'UPDATE_ALLOCATION';
 var RISK_LEVEL = exports.RISK_LEVEL = 'RISK_LEVEL';
 
-var updateAllocation = exports.updateAllocation = function updateAllocation(_ref) {
-  var values = _ref.values;
+var updateAllocation = exports.updateAllocation = function updateAllocation(values) {
   return {
     type: UPDATE_ALLOCATION,
     values: values
@@ -29417,7 +29416,7 @@ var App = function App() {
         _react2.default.createElement(
           'p',
           { className: "instructions" },
-          'To see what your risk profile looks like, complete a row that totals 100. Each number represents a percentage.'
+          'To see what your risk profile looks like, click on a row. Each number represents a percentage.'
         )
       ),
       _react2.default.createElement(_donut_container2.default, null)
@@ -29876,8 +29875,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -29892,61 +29889,17 @@ var Row = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).call(this, props));
 
-    _this.state = { stock: 0, bond: 0, cash: 0, international: 0, equity: 0, error: true };
-    _this.handleUpdate = _this.handleUpdate.bind(_this);
     _this.handleClick = _this.handleClick.bind(_this);
-
     return _this;
   }
 
-  // componentWillMount(){
-  //   this.props.updateRiskLevel(this.props.id);
-  // }
-
   _createClass(Row, [{
-    key: "calculateTotal",
-    value: function calculateTotal() {
-
-      var values = [this.state.stock, this.state.bond, this.state.cash, this.state.international, this.state.equity];
-      var sum = values.reduce(function (a, b) {
-        return Number(a) + Number(b);
-      });
-
-      if (sum === 100) {
-        this.props.updateAllocation({ values: values });
-        this.setState({ error: false });
-      } else {
-        this.setState({ error: true });
-      }
-    }
-  }, {
-    key: "error",
-    value: function error() {
-      if (this.state.error && this.props.active) {
-        return _react2.default.createElement(
-          "td",
-          { className: "errorMessage" },
-          "Total must be 100"
-        );
-      } else {
-        return _react2.default.createElement("td", { className: "errorMessage" });
-      }
-    }
-  }, {
     key: "handleClick",
     value: function handleClick(e) {
-      this.props.updateRiskLevel(this.props.id);
-      this.calculateTotal();
-    }
-  }, {
-    key: "handleUpdate",
-    value: function handleUpdate(field) {
-      var _this2 = this;
+      var values = this.props.values;
 
-      var that = this;
-      return function (e) {
-        _this2.setState(_defineProperty({}, field, e.target.value), _this2.calculateTotal);
-      };
+      this.props.updateRiskLevel(this.props.id);
+      this.props.updateAllocation([values[0], values[1], values[2], values[3], values[4]]);
     }
   }, {
     key: "toggle",
@@ -29967,29 +29920,28 @@ var Row = function (_React$Component) {
         _react2.default.createElement(
           "td",
           null,
-          _react2.default.createElement("input", { onChange: this.handleUpdate("stock"), value: this.state.stock })
+          _react2.default.createElement("input", { value: this.props.values[0], readOnly: true })
         ),
         _react2.default.createElement(
           "td",
           null,
-          _react2.default.createElement("input", { onChange: this.handleUpdate("bond"), value: this.state.bond })
+          _react2.default.createElement("input", { value: this.props.values[1], readOnly: true })
         ),
         _react2.default.createElement(
           "td",
           null,
-          _react2.default.createElement("input", { onChange: this.handleUpdate("cash"), value: this.state.cash })
+          _react2.default.createElement("input", { value: this.props.values[2], readOnly: true })
         ),
         _react2.default.createElement(
           "td",
           null,
-          _react2.default.createElement("input", { onChange: this.handleUpdate("international"), value: this.state.international })
+          _react2.default.createElement("input", { value: this.props.values[3], readOnly: true })
         ),
         _react2.default.createElement(
           "td",
           null,
-          _react2.default.createElement("input", { onChange: this.handleUpdate("equity"), value: this.state.equity })
-        ),
-        this.error()
+          _react2.default.createElement("input", { value: this.props.values[4], readOnly: true })
+        )
       );
     }
   }]);
@@ -30065,8 +30017,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function createRows() {
   var table = [];
+  var values = [[20, 10, 20, 30, 20], [10, 10, 40, 30, 10], [20, 0, 20, 60, 0], [80, 0, 20, 0, 0], [20, 10, 35, 15, 20], [20, 40, 20, 0, 20], [0, 0, 0, 100, 0], [5, 5, 15, 50, 25], [40, 10, 40, 5, 5], [80, 5, 5, 5, 5]];
   for (var i = 0; i < 10; i++) {
-    table.push(_react2.default.createElement(_row_container2.default, { key: i, id: i + 1 }));
+    table.push(_react2.default.createElement(_row_container2.default, { key: i, id: i + 1, values: values[i] }));
   }
   return table;
 }
