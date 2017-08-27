@@ -29740,6 +29740,10 @@ var _react = __webpack_require__(7);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _table = __webpack_require__(161);
+
+var _table2 = _interopRequireDefault(_table);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var recos = void 0;
@@ -29753,27 +29757,37 @@ function addRecommendation(hash) {
     switch (type) {
       case "stock":
         if (value < 100) {
-          recos.push("You need to invest more stocks!");
+          recos.push([100, 0]);
+        } else {
+          recos.push([0, 100]);
         }
         return;
       case "bond":
         if (value < 100) {
-          recos.push("You need to sell more bonds!");
+          recos.push([100, 0]);
+        } else {
+          recos.push([0, 100]);
         }
         return;
       case "cash":
         if (value < 100) {
-          recos.push("You need to save more cash!");
+          recos.push([100, 0]);
+        } else {
+          recos.push([0, 100]);
         }
         return;
       case "international":
         if (value < 100) {
-          recos.push("You need to travel!");
+          recos.push([100, 100]);
+        } else {
+          recos.push([0, 100]);
         }
         return;
       case "equity":
         if (value < 100) {
-          recos.push("You need to invest in more equity!");
+          recos.push([100, 0]);
+        } else {
+          recos.push([0, 0]);
         }
         return;
       default:
@@ -29790,23 +29804,130 @@ var Reco = function Reco(_ref) {
 
   addRecommendation(dollar);
   return _react2.default.createElement(
-    "div",
-    { className: "reco" },
+    'div',
+    { className: 'reco' },
     _react2.default.createElement(
-      "p",
+      'p',
       null,
-      "Recommendations"
+      'Recommendations'
     ),
     _react2.default.createElement(
-      "ul",
-      null,
-      recos.map(function (el, idx) {
-        return _react2.default.createElement(
-          "li",
-          { key: idx },
-          el
-        );
-      })
+      'table',
+      { className: 'buySell' },
+      _react2.default.createElement(
+        'tbody',
+        null,
+        _react2.default.createElement(
+          'tr',
+          { className: 'tableHead' },
+          _react2.default.createElement('th', { style: { "border": "none" } }),
+          _react2.default.createElement(
+            'th',
+            null,
+            'Buy'
+          ),
+          _react2.default.createElement(
+            'th',
+            null,
+            'Sell'
+          )
+        ),
+        _react2.default.createElement(
+          'tr',
+          null,
+          _react2.default.createElement(
+            'td',
+            { className: 'label' },
+            'Stock'
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[0][0]
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[0][1]
+          )
+        ),
+        _react2.default.createElement(
+          'tr',
+          null,
+          _react2.default.createElement(
+            'td',
+            { className: 'label' },
+            'Bond'
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[1][0]
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[1][1]
+          )
+        ),
+        _react2.default.createElement(
+          'tr',
+          null,
+          _react2.default.createElement(
+            'td',
+            { className: 'label' },
+            'Cash'
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[2][0]
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[2][1]
+          )
+        ),
+        _react2.default.createElement(
+          'tr',
+          null,
+          _react2.default.createElement(
+            'td',
+            { className: 'label' },
+            'Int.'
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[3][0]
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[3][1]
+          )
+        ),
+        _react2.default.createElement(
+          'tr',
+          null,
+          _react2.default.createElement(
+            'td',
+            null,
+            'Equity'
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[4][0]
+          ),
+          _react2.default.createElement(
+            'td',
+            null,
+            recos[4][1]
+          )
+        )
+      )
     )
   );
 };

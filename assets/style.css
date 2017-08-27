@@ -23,13 +23,42 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
   font-family: sans-serif;
-
 }
 
 ul {
   padding-left: 30px;
     padding-top: 15px;
 }
+
+.buySell {
+  margin: auto;
+  margin-top: 20px;
+}
+
+.buySell td {
+  text-align: center;
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+
+.buySell th {
+  border: 1px solid #cccccc;
+    padding: 5px;
+
+}
+
+.buffer {
+  border: none;
+}
+
+.label {
+  width: 50px;
+}
+
+
+
+
+
 
 .instructions {
   font-family: sans-serif;
@@ -45,6 +74,13 @@ tr > td > input {
 height: 20px;
 padding-left: 10px
 }
+
+.buySell {
+  width: 80%;
+}
+
+
+
 
 form > div > input {
   margin-bottom: 10px;
@@ -132,7 +168,6 @@ margin-bottom: 25px;
   border: 1px solid grey;
     padding-top: 20px;
     border-radius: 50px;
-    padding-left: 20px;
     position: relative;
     right: 50px;
 }
