@@ -33,7 +33,7 @@ function addRecommendation(hash){
         return;
       case "international":
         if (value < 100){
-          recos.push([100, 100]);
+          recos.push([100, 0]);
         } else {
           recos.push([0, 100]);
         }
@@ -42,7 +42,7 @@ function addRecommendation(hash){
         if (value < 100){
           recos.push([100, 0]);
         } else {
-          recos.push([0, 0]);
+          recos.push([0, 100]);
         }
         return;
       default:
